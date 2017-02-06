@@ -2,7 +2,7 @@ language: csharp
 solution: "./NameReorder/NameReorder.sln"
 install:
   - nuget restore ./NameReorder/NameReorder.sln
-  - nuget install NUnit.Runners -Version 3.6.0 -OutputDirectory testrunner
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release ./NameReorder/NameReorder.sln
-  - mono ./testrunner/NUnit.Runners.3.6.0/tools/nunit-console.exe ./NameReorder/NameReorder.Tests/bin/Release/NameReorder.Tests.dll
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./NameReorder/NameReorder.Tests/bin/Release/NameReorder.Tests.dll
