@@ -5,4 +5,4 @@ install:
   - nuget install NUnit.Runners -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release ./NameReorder/NameReorder.sln
-  - mono ./testrunner/NUnit.Runners.3.6.0/tools/nunit-console.exe ./NameReorder/NameReorder.UnitTests/bin/Release/NameReorder.UnitTests.dll
+  - mono ./testrunner/NUnit.Runners.3.6.0/tools/nunit3-console.exe ./NameReorder/NameReorder.UnitTests/bin/Release/NameReorder.UnitTests.dll
