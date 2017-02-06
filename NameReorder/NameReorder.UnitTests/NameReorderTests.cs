@@ -42,7 +42,8 @@ namespace NameReorder.UnitTests
         [Test]
         public void Data_Format_Invalid_Throws_Exception_WithInvalidMessage_TestMethod()
         {
-            string file = "person.txt";
+            var dir = Path.GetDirectoryName(new Uri(typeof(DataResourceTests).Assembly.CodeBase).LocalPath);
+            string file = string.Format("{0}{1}{2}", dir, Path.DirectorySeparatorChar, "person.txt");
             IResource resource = new FileResource(file);
             Assert.Throws(typeof(Exception), () => resource.GetPersons(), "Invalid text format", null);
         }
@@ -58,7 +59,8 @@ namespace NameReorder.UnitTests
                 new Person() { FirstName="SMITH", LastName="FREDRICK" }
             };
             
-            string file = "data.txt";
+            var dir = Path.GetDirectoryName(new Uri(typeof(DataResourceTests).Assembly.CodeBase).LocalPath);
+            string file = string.Format("{0}{1}{2}", dir, Path.DirectorySeparatorChar, "data.txt");
             IResource resource = new FileResource(file);
             IEnumerable<Person> persons = resource.GetPersons();
 
