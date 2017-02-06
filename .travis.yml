@@ -1,0 +1,7 @@
+language: csharp
+solution: "./NameReorder/NameReorder.sln"
+install:
+- travis_retry nuget restore -source "https://www.nuget.org/api/v2" ./NameReorder/NameReorder.sln
+script:
+- xbuild ./NameReorder/NameReorder.sln
+- mono ./NameReorder/packages/xunit.runner.console*/tools/xunit.console.exe ./NameReorder/NameReorder.Tests/bin/Debug/NameReorder.Tests.dll
